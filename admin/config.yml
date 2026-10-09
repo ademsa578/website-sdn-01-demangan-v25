@@ -1,0 +1,23 @@
+# PENTING: ganti GANTI-USERNAME/GANTI-NAMA-REPO dengan repo GitHub website yang sebenarnya.
+# Autentikasi GitHub/OAuth juga harus dikonfigurasi pada hosting sebelum editor dapat dipakai.
+backend:
+  name: github
+  repo: GANTI-USERNAME/GANTI-NAMA-REPO
+  branch: main
+  # OAuth/auth proxy perlu dikonfigurasi sesuai hosting; jangan menaruh token rahasia di file ini.
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+locale: "id"
+collections:
+  - name: "konten"
+    label: "Konten Website (data editor)"
+    files:
+      - name: "pengaturan"
+        label: "Pengaturan konten"
+        file: "content/pengaturan.yml"
+        fields:
+          - { label: "Nama sekolah", name: "nama_sekolah", widget: "string", default: "SDN 01 DEMANGAN" }
+          - { label: "Slogan", name: "slogan", widget: "string", default: "Belajar. Bertumbuh. Berprestasi." }
+          - { label: "Deskripsi beranda", name: "deskripsi_beranda", widget: "text" }
+          - { label: "Foto Seni Tari", name: "foto_seni_tari", widget: "image", required: false }
+          - { label: "Berita sekolah", name: "berita", widget: "list", fields: [{ label: "Judul", name: "judul", widget: "string" }, { label: "Ringkasan", name: "ringkasan", widget: "text" }] }
